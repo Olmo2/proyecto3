@@ -17,32 +17,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bienvenida);
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                launchActivity(Login.class);
-            }
-        });
         buttonReg = (Button) findViewById(R.id.buttonReg);
 
-        buttonReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(Registro.class);
-            }
-        });
     }
 
-
-
-    private void launchActivity(Class clase) {
-
-        Intent intent = new Intent(MainActivity.this, clase);
+    public void loginClick(View view) {
+        Intent intent = new Intent(MainActivity.this, Login.class
+        );
         startActivity(intent);
+
     }
 
 
+    public void regClick(View view) {
+        Intent intent = new Intent(MainActivity.this, Login.class
+        );
+        startActivity(intent);
 
+    }
 
 }
