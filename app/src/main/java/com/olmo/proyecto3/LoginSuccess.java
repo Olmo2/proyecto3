@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginSuccess extends AppCompatActivity {
 
-    TextView text;
+  // TextView text;
+
     Intent intent=getIntent();
 
 
@@ -18,7 +19,11 @@ public class LoginSuccess extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_success);
-        //text.setText("Bienvenid@: " + intent.getStringExtra("nombre"));
+      //  String nombre= intent.getStringExtra("nombre");
+       // System.out.println(nombre);
+       // text= (TextView) findViewById(R.id.textWelcome);
+        //text.setText("Bienvenid@: " + nombre );
+
 
 
 
