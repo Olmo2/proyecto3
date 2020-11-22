@@ -8,26 +8,47 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginSuccess extends AppCompatActivity {
+public class LoginSuccess extends AppCompatActivity{
 
-  // TextView text;
+  TextView text;
+    String nombre;
+   // Intent intent=getIntent();
+    Bundle extras;
+    Button boton;
 
-    Intent intent=getIntent();
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_success);
-      //  String nombre= intent.getStringExtra("nombre");
-       // System.out.println(nombre);
-       // text= (TextView) findViewById(R.id.textWelcome);
-        //text.setText("Bienvenid@: " + nombre );
 
+        boton = (Button) findViewById(R.id.buttonVolverInicio);
+        boton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Muerte");
+                Intent i=new Intent(LoginSuccess.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
+                text= (TextView) findViewById(R.id.textWelcome);
+        if (savedInstanceState == null) {
+             extras = getIntent().getExtras();
+            if(extras == null) {
+                nombre= null;
+            } else {
+                nombre= extras.getString("nombre");
+            }
+        } else {
+            nombre= (String) savedInstanceState.getSerializable("nombre");
+        }
 
-
-
+        text.setText("Bienvenid@: " + nombre );
     }
+
+
 
 
 }

@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewMail" />
 
     <Button
-        android:id="@+id/buttonVolver"
+        android:id="@+id/buttonVolverInicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
